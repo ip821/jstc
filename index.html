@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>Angular 2 QuickStart</title>
+
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="index.css">
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="node_modules/es6-shim/es6-shim.min.js"></script>
+    <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
+    <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
+
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+    <script>
+        if (typeof window !== 'undefined' && window.process && window.process.type === "renderer"){
+            window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.js');
+        }
+    </script>
+    
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
+    <script src="node_modules/angular2/bundles/router.dev.js"></script>
+    <script src="node_modules/angular2/bundles/http.dev.js"></script>
+    <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.js"></script>
+    <base href="/">
+
+    <!-- 2. Configure SystemJS -->
+    <script>
+        System.config({
+            packages: {
+                component: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                },
+                service: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                },
+                '/node_modules/ng2-bootstrap': {},
+                '/node_modules/angular2-modal': {}
+            },
+            map: {
+                moment: '/node_modules/moment/moment.js',
+                "ng2-bootstrap"  : "/node_modules/ng2-bootstrap/ng2-bootstrap",
+                "angular2-modal": "/node_modules/angular2-modal/dist/angular2-modal"
+        }
+        });
+        System
+            .import('boot.js')
+            .then(null, console.error.bind(console));
+    </script>
+</head>
+<!-- 3. Display the application -->
+
+<body>
+    <div class="main-div">
+        <my-app>Loading...</my-app>
+    </div>
+</body>
+
+</html>

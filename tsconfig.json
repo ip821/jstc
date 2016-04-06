@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "removeComments": false,
+    "noImplicitAny": false
+  },
+  "exclude": [
+    "node_modules",
+    "node_modules/ng2-table",
+    "node_modules/ng2-table/components",
+    "node_modules/ng2-table/components/table",
+    "dist",
+    "dist-bin"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Electron App",
+            "type": "node",
+            "program": "${workspaceRoot}/boot_electron.js", // important
+            "stopOnEntry": false,
+            "args": [
+                "--debug_mode"
+            ],
+            "cwd": "${workspaceRoot}",
+            // next line is very important
+            "runtimeExecutable": "${workspaceRoot}/node_modules/.bin/electron.cmd",
+            "runtimeArguments": [
+                ""
+            ],
+            "env": {},
+            "sourceMaps": false
+        }
+    ]
+}
