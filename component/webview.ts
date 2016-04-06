@@ -1,5 +1,6 @@
 ///<reference path="../typings/github-electron/github-electron.d.ts"/>
 import {Component, ElementRef, EventEmitter, AfterViewInit, ViewChild, ContentChild} from 'angular2/core';
+import {Http} from "angular2/http"
 
 declare var electron: Electron.ElectronMainAndRenderer;
 
@@ -15,7 +16,7 @@ export class WebView implements AfterViewInit {
     public eventOnLinkClicked: EventEmitter<OnLinkClickedArgs> = new EventEmitter();
     _webViewElement: JQuery;
 
-    constructor(private _element: ElementRef) {
+    constructor(private _element: ElementRef, private _http: Http) {
     }
 
     ngAfterViewInit() {
@@ -25,6 +26,9 @@ export class WebView implements AfterViewInit {
     }
 
     onReady = () => {
+        this._http
+        .get("http://172.22.2.28:8082/httpAuth/app/rest/projects").toPromise()
+        .then(res => console.log(res.json()));
         this._webViewElement.on("new-window", this.onLinkClicked);
     }
 
