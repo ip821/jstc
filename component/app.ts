@@ -31,7 +31,6 @@ export class App implements AfterViewInit {
     }
 
     openLink = (url: string) => {
-        console.log("asd");
         electron.shell.openExternal(url);
     }
 
