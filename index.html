@@ -19,9 +19,10 @@
     <script>
         if (typeof window !== 'undefined' && window.process && window.process.type === "renderer"){
             window.$ = window.jQuery = require('./node_modules/jquery/dist/jquery.js');
+            electron = require("electron");
         }
     </script>
-    
+
     <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="node_modules/angular2/bundles/router.dev.js"></script>
@@ -42,10 +43,11 @@
                     defaultExtension: 'js'
                 },
                 '/node_modules/ng2-bootstrap': {},
-                '/node_modules/angular2-modal': {}
+                '/node_modules/angular2-modal': {},
+                "node_modules/open": {}
             },
             map: {
-                moment: '/node_modules/moment/moment.js',
+                "moment": '/node_modules/moment/moment.js',
                 "ng2-bootstrap"  : "/node_modules/ng2-bootstrap/ng2-bootstrap",
                 "angular2-modal": "/node_modules/angular2-modal/dist/angular2-modal"
         }
